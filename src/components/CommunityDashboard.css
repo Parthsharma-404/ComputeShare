@@ -1,0 +1,306 @@
+.community-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* KPI Strip */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.kpi-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px !important;
+}
+
+.kpi-icon-pill {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.neon-green-text-bg { background: rgba(16, 185, 129, 0.1); }
+.neon-cyan-text-bg { background: rgba(0, 242, 255, 0.1); }
+.neon-purple-text-bg { background: rgba(139, 92, 246, 0.1); }
+
+.kpi-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-mini-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.kpi-mini-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.kpi-mini-unit {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.kpi-mini-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+  min-height: 800px;
+}
+
+.panel-header-small.border-dashed {
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+.badge-outline .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.badge-outline.busy { border-color: rgba(0, 242, 255, 0.3); color: var(--neon-cyan); }
+.badge-outline.busy .dot { background: var(--neon-cyan); box-shadow: 0 0 5px var(--neon-cyan); }
+.badge-outline.idle { border-color: rgba(139, 92, 246, 0.3); color: var(--neon-purple); }
+.badge-outline.idle .dot { background: var(--neon-purple); box-shadow: 0 0 5px var(--neon-purple); }
+
+/* SVG Network Topology */
+.svg-network-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.topology-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+}
+
+.coord-node {
+  fill: rgba(0, 242, 255, 0.2);
+  stroke: var(--neon-cyan);
+  stroke-width: 2;
+}
+.coord-ring {
+  fill: none;
+  stroke: var(--neon-cyan);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  animation: spin-slow 10s linear infinite;
+  transform-origin: 200px 100px;
+}
+
+@keyframes spin-slow {
+  100% { transform: rotate(360deg); }
+}
+
+.worker-node {
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+.worker-node.busy { fill: #000; stroke: var(--neon-cyan); }
+.worker-node.idle { fill: #000; stroke: var(--neon-purple); }
+
+.topology-line {
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke 0.3s ease;
+}
+.topology-line.busy { stroke: rgba(0, 242, 255, 0.4); stroke-dasharray: 2 4; }
+.topology-line.idle { stroke: rgba(139, 92, 246, 0.2); stroke-dasharray: 4 4; }
+
+.packet {
+  fill: var(--neon-cyan);
+  filter: drop-shadow(0 0 4px var(--neon-cyan));
+}
+
+/* Throughput Stats */
+.throughput-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+}
+
+.t-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.t-lbl {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+.t-val {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: var(--font-mono);
+}
+
+/* Task Distribution Queue */
+.task-queue-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.task-queue-item {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tq-progress-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tq-progress-fill {
+  height: 100%;
+  transition: width 0.3s linear;
+}
+
+.bg-amber { background: var(--neon-amber); box-shadow: 0 0 8px var(--neon-amber); }
+.bg-cyan { background: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.bg-green { background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
+
+/* Leaderboard */
+.ranking-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.ranking-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.ranking-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.rank-badge {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-weight: bold;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.rank-badge.top-3 {
+  background: rgba(0, 242, 255, 0.1);
+  color: var(--neon-cyan);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.rank-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rank-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contribution-bar-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.contribution-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
