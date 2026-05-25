@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-// Connect to the locally running NebulaGrid coordinator
+// Connect to the locally running ComputeShare coordinator
 const URL = 'http://localhost:3001';
 
 export const socket = io(URL, {

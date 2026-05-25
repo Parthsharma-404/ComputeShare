@@ -31,7 +31,7 @@ process.on('unhandledRejection', (reason, promise) => {
 
 // Basic Health Check Route
 app.get('/health', (req, res) => {
-  res.json({ status: 'active', message: 'NebulaGrid Coordinator is running.' });
+  res.json({ status: 'active', message: 'ComputeShare Coordinator is running.' });
 });
 
 // Initialize Coordinator Orchestration
@@ -47,5 +47,5 @@ io.on('connection', (socket) => {
 
 const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
-  console.log(`[SYSTEM] NebulaGrid Coordinator listening on port ${PORT}`);
+  console.log(`[SYSTEM] ComputeShare Coordinator listening on port ${PORT}`);
 });

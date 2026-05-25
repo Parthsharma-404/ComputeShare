@@ -15,7 +15,7 @@ const Sidebar = ({ activeSection, onNavClick, isLightMode, toggleTheme }) => {
       <div className="sidebar-top">
         <div className="logo-container">
           <Hexagon className="logo-icon animate-pulse-glow" size={32} />
-          <span className="logo-text">NebulaGrid</span>
+          <span className="logo-text">ComputeShare</span>
         </div>
         
         <div className="nav-menu">

@@ -82,7 +82,7 @@ router.get('/tasks/:id/results', (req, res) => {
   const resultsList = chunks.map(c => JSON.parse(c.result));
   
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Content-Disposition', `attachment; filename="nebulagrid_task_${task.id}.json"`);
+  res.setHeader('Content-Disposition', `attachment; filename="computeshare_task_${task.id}.json"`);
   res.send(JSON.stringify(resultsList, null, 2));
 });
 

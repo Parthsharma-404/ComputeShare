@@ -1,16 +1,49 @@
-# React + Vite
+# ComputeShare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ComputeShare is a distributed computing platform that allows donor nodes to contribute their computing power to execute partitioned tasks.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project has been restructured into separate directories:
 
-## React Compiler
+- **`frontend/`**: The frontend React web application built with Vite.
+- **`backend/`**: The backend central coordinator server built with Express and Socket.io.
+- **`README.md`**: This configuration and setup guide.
+- **`.gitignore`**: Git ignore rules.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### 2. Running the Backend
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies (if not already installed):
+   ```bash
+   npm install
+   ```
+3. Start the coordinator server:
+   ```bash
+   npm run dev
+   ```
+   The coordinator will start listening on port `3001`.
+
+### 3. Running the Frontend
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies (if not already installed):
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+   Open the browser at the local URL provided by Vite (typically `http://localhost:5173`).

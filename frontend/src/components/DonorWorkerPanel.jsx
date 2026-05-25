@@ -250,7 +250,7 @@ const DonorWorkerPanel = () => {
       
       <div className="layout-left">
         <div className="worker-header">
-          <h2 className="section-title">NebulaGrid Donor Node</h2>
+          <h2 className="section-title">ComputeShare Donor Node</h2>
           <div className={`status-badge ${isComputing ? 'glowing-text-cyan' : 'text-muted'}`}>
             <span className={isComputing ? 'pulse-dot-cyan' : ''} style={{width: 8, height: 8, backgroundColor: isComputing ? '' : 'gray', borderRadius: '50%'}}></span> 
             {isComputing ? 'CONNECTED (COMPUTING)' : 'OFFLINE'}
