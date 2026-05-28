@@ -46,4 +46,4 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
    ```bash
    npm run dev
    ```
-   Open the browser at the local URL provided by Vite (typically `http://localhost:5173`).
+  
