@@ -86,4 +86,4 @@ router.get('/tasks/:id/results', (req, res) => {
   res.send(JSON.stringify(resultsList, null, 2));
 });
 
-module.exports = ;
+module.exports = router;
